@@ -1,6 +1,6 @@
 # WpfKioskApp
 
-This repository contains a sample WPF (.NET Framework 4.7.2) application that hosts a WebView2 control and communicates with a TCP server. The UI is provided by a local HTML/JavaScript page.
+This repository contains `WpfKioskApp`, a WPF (.NET Framework 4.7.2) kiosk application that embeds a WebView2 browser and relays messages to a TCP server.  The UI is served from local HTML/JavaScript assets.
 
 ## Projects
 
@@ -9,10 +9,10 @@ This repository contains a sample WPF (.NET Framework 4.7.2) application that ho
 
 ## Features
 
-- WebView2 hosting of `index.html`.
-- Persistent TCP client with reconnect logic.
-- Message relay between the TCP connection and the JavaScript frontend.
-- Logging using log4net with rolling log files.
+- WebView2 hosting of the local frontend under `UI/Assets`.
+- Resilient asynchronous TCP client with automatic reconnection.
+- Bidirectional message relay between the TCP connection and the JavaScript frontend using `WebMessageBridge`.
+- Structured logging using log4net with rolling log files under `logs`.
 
 ## Building
 
@@ -20,5 +20,4 @@ Open `src/WpfKioskApp.sln` with Visual Studio 2019 or later and restore NuGet pa
 
 ## TODO
 
-- Improve UI and connection status display.
-- Add tests and further error handling.
+- Add unit tests and further error handling.

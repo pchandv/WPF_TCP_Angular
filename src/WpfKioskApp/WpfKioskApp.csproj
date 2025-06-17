@@ -9,13 +9,18 @@
     <PackageReference Include="log4net" Version="2.0.15" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="logging.config">
+    <None Update="App.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <Content Update="index.html">
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Logging\log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Update="UI\Assets\index.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="script.js">
+    <Content Update="UI\Assets\script.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
