@@ -1,5 +1,6 @@
 const logDiv = document.getElementById('log');
 const messageBox = document.getElementById('messageBox');
+const statusSpan = document.getElementById('status');
 
 function appendLog(text) {
     const p = document.createElement('div');
@@ -18,7 +19,10 @@ function sendMessage() {
 }
 
 window.chrome.webview.addEventListener('message', event => {
-    appendLog('< ' + event.data);
+    const data = event.data;
+    if (data.startsWith('STATUS:')) {
+        statusSpan.textContent = data.substring(7);
+    } else {
+        appendLog('< ' + data);
+    }
 });
-
-// TODO: add UI improvements and connection status display

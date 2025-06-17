@@ -1,5 +1,4 @@
 using System.Windows;
-using log4net;
 using log4net.Config;
 using System.IO;
 
@@ -13,7 +12,7 @@ namespace WpfKioskApp
         static App()
         {
             // Initialize log4net configuration
-            XmlConfigurator.Configure(new FileInfo("logging.config"));
+            XmlConfigurator.Configure(new FileInfo(Path.Combine("Logging", "log4net.config")));
         }
     }
 }
